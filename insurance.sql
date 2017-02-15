@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2017 at 07:26 PM
+-- Generation Time: Feb 15, 2017 at 06:38 PM
 -- Server version: 10.1.8-MariaDB
 -- PHP Version: 5.6.14
 
@@ -62,7 +62,8 @@ INSERT INTO `car_info` (`id`, `model`, `parked`, `accident`, `security`, `modifi
 (45, 'Porsche Panamera', 'in a garage ', 'yes', 'No Alarm ', 'yes'),
 (46, 'Porsche macan', 'in a garage ', 'yes', 'No Alarm ', 'yes'),
 (47, 'Porsche macan', 'in a garage ', 'yes', 'No Alarm ', 'yes'),
-(48, 'Porsche Panamera', 'in a garage ', 'no', 'No Alarm ', 'yes');
+(48, 'Porsche Panamera', 'in a garage ', 'no', 'No Alarm ', 'yes'),
+(49, 'Porsche turbo', 'Under a carport', 'yes', 'No Alarm ', 'yes');
 
 -- --------------------------------------------------------
 
@@ -117,15 +118,12 @@ CREATE TABLE `clients` (
 INSERT INTO `clients` (`clientID`, `firstname`, `lastname`, `fathername`, `mothername`, `address`, `job`, `phone`, `state`, `age`, `birthplace`) VALUES
 (1, 'zeina', 'houmani', 'khalil houmani', 'amina choeuib', 'doueir', 'doctor', '71887958', 'single', '20', 'saida'),
 (4, 'alaa', 'salemeh', 'hassan taha', 'mariam Adam', 'nabatieh', 'engineer', '03333721', 'married', '40', 'nabatieh'),
-(7, 'zeina', 's', 's', 'amina shoeib', 'SOUR', 'TEACHER', '71254789', 'SINGLE', '35', 'SAIDA'),
 (9, 'yara', 'kadi', 'mohammad kadi', 'sanaa shoeib', 'beyrout', 'nurse', '71234569', 'married', '30', 'tripoli'),
 (10, 'alya', 'salemeh', 'hassan taha', 'mariam Adam', 'nabatieh', 'engineer', '03333721', 'married', '25', 'sour'),
 (24, 'Amira ', 'kanso', 'fadel kanso', 'layla chalhoub', 'sour', 'teacher', '03333721', 'married', '30', 'sour'),
 (26, 'zeinab', 'hammoud', 'hassan chaaban', 'Alia taha', 'Nabatieh', 'nurse', '01236547', 'single', '42', 'Saida'),
 (27, 'hadi', 'hoteit', 'hassan hoteit', 'zeinab ahmad', 'beyrout', 'nurse', '03125478', 'married', '26', 'sour'),
-(28, 'TEST', 'TEST', 'TEST', 'TEST', 'TEST', 'TEST', '03333333', 'TEST', '20', 'TEST'),
-(29, 't', 't', 't', 't', 't', 't', 't', 'single', 't', 't'),
-(30, 'a', 'a', 'a', 'a', 'a', 'a', 'aa', 'single', 'a', 'a');
+(28, 'TEST', 'TEST', 'TEST', 'TEST', 'TEST', 'TEST', '03333333', 'TEST', '20', 'TEST');
 
 -- --------------------------------------------------------
 
@@ -226,7 +224,8 @@ INSERT INTO `licence` (`id`, `licence_type`, `licence_nb`, `licence_to`) VALUES
 (48, 'C Car', '21555', '   2020 / Years'),
 (49, 'C Car', '1255', '    / Years'),
 (50, 'C Car', '444', '    / Years'),
-(51, 'LR Light rigid', '125478', '   10 / Years');
+(51, 'LR Light rigid', '125478', '   10 / Years'),
+(52, 'C Car', '555', '    / Years');
 
 -- --------------------------------------------------------
 
@@ -269,7 +268,8 @@ INSERT INTO `policy` (`policyID`, `clientID`, `employeeID`, `type`, `amount`, `t
 (40, 27, 1, '2', '150 $', NULL, '2017-1-19', NULL, NULL, NULL, NULL, 'circulation accident', NULL, NULL, NULL),
 (41, 28, 1, '3', NULL, NULL, '2017-1-19', NULL, NULL, NULL, NULL, '-', '48', '44', '1/January/2017'),
 (42, 29, 1, '1', '3603', '10 Year Term', '2017-1-19', 't', 't', 'Insured Name', 'Insured Phone', '-', NULL, '43', NULL),
-(43, 30, 1, '1', '5050', '5 Year Term', '2017-1-19', 'aa', 'aa', 'new', 'new', '-', NULL, NULL, NULL);
+(43, 30, 1, '1', '5050', '5 Year Term', '2017-1-19', 'aa', 'aa', 'new', 'new', '-', NULL, NULL, NULL),
+(44, 31, 0, '2', '75$', NULL, '2017-2-02', NULL, NULL, NULL, NULL, 'Guaranteed accident', NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -325,22 +325,22 @@ ALTER TABLE `policy`
 -- AUTO_INCREMENT for table `car_info`
 --
 ALTER TABLE `car_info`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 --
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `clientID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `clientID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `licence`
 --
 ALTER TABLE `licence`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 --
 -- AUTO_INCREMENT for table `policy`
 --
 ALTER TABLE `policy`
-  MODIFY `policyID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `policyID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
